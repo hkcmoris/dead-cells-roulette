@@ -1,0 +1,8 @@
+RewriteEngine On
+# Deny hidden files and directories without changing hosting-wide Options settings.
+RewriteRule (^|/)\. - [F,L]
+# Let the API directory apply its own routing and access restrictions.
+RewriteRule ^api(?:/|$) - [L]
+# Deny directory listings below the app root; index.html is served by the host default.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule . - [F,L]

@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule (^|/)\. - [F,L]
+RewriteRule ^private(?:/|$) - [F,L]
+RewriteRule ^index\.php$ - [L]
+RewriteRule ^ index.php [L,QSA]

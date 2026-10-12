@@ -17,5 +17,11 @@ jobs:
                   node-version-file: .nvmrc
                   cache: npm
 
+            - uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.4'
+                  extensions: pdo_mysql
+                  coverage: none
+
             - run: npm ci
             - run: npm run check
